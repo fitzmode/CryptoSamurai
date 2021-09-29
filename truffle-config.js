@@ -62,7 +62,7 @@ module.exports = {
     rinkeby: {
       provider: () =>
         new HDWalletProvider(process.env.PRIVATE_KEY, process.env.INFURA_URL),
-      network_id: 3, // Ropsten's id
+      network_id: 4, // Ropsten's id
       gas: 5500000, // Ropsten has a lower block limit than mainnet
       confirmations: 2, // # of confs to wait between deployments. (default: 0)
       timeoutBlocks: 200, // # of blocks before a deployment times out  (minimum/default: 50)
@@ -84,18 +84,18 @@ module.exports = {
   // Configure your compilers
   compilers: {
     solc: {
-      // version: "0.5.1",    // Fetch exact version from solc-bin (default: truffle's version)
-      // docker: true,        // Use "0.5.1" you've installed locally with docker (default: false)
-      // settings: {          // See the solidity docs for advice about optimization and evmVersion
-      //  optimizer: {
-      //    enabled: false,
-      //    runs: 200
-      //  },
-      //  evmVersion: "byzantium"
-      // }
+      version: "0.8.6", // Fetch exact version from solc-bin (default: truffle's version)
+      docker: false, // Use "0.5.1" you've installed locally with docker (default: false)
+      settings: {
+        // See the solidity docs for advice about optimization and evmVersion
+        optimizer: {
+          enabled: false,
+          runs: 200,
+        },
+        evmVersion: "byzantium",
+      },
     },
   },
-
   // Truffle DB is currently disabled by default; to enable it, change enabled:
   // false to enabled: true. The default storage location can also be
   // overridden by specifying the adapter settings, as shown in the commented code below.
@@ -116,4 +116,8 @@ module.exports = {
   //   }
   // }
   // }
+  plugins: ["truffle-plugin-verify"],
+  api_keys: {
+    etherscan: process.env.etherscanApiKey,
+  },
 };
