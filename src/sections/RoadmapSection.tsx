@@ -16,6 +16,11 @@ import { ReactNode } from "react";
 import { BsPerson } from "react-icons/bs";
 import { FiServer } from "react-icons/fi";
 import { GoLocation } from "react-icons/go";
+import {
+  VerticalTimeline,
+  VerticalTimelineElement,
+} from "react-vertical-timeline-component";
+import "react-vertical-timeline-component/style.min.css";
 
 import SwiperCore, { Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -90,37 +95,37 @@ const activations = [
   {
     text: "Nonconformist Ducks Community Launch in Twitter & Discord. Some Nonconformist Ducks will be airedropped to our early adpoters and supporters. We will put focus on social media in order to fly to the moon quickly.",
     icon: "",
-    progess: "Sep 15",
+    progress: "10%",
   },
   {
     text: "Minting available at a price of 0.03 ETH + Gas fee. Be nonconformist, buying 1 is a will regret!!",
     icon: "",
-    progress: "Oct 1",
+    progress: "20%",
   },
   {
     text: "When 25% of Nonconformist Ducks sells out, we will airdrop randomly 3 Ducks to the holders. Also we are going to select 5 members of the discord group to be moderators and will be rewarded with a an airdropped Duck.",
     icon: "",
-    progress: "25% Sold",
+    progress: "30%",
   },
   {
     text: "When Discord Hits 2500 Subscribers  3 Nonconformist ducks will be raffled among discord members",
     icon: "",
-    progress: "2500 Discord Subs",
+    progress: "35%",
   },
   {
     text: 'When 50% of Nonconformist Ducks sells out, we will offer the double to 5 "floor price” ducks from holders in order to raise the floor.  Being nonconformist is mooning, so fuck the floor!',
     icon: "",
-    progress: "50% Sold",
+    progress: "40%",
   },
   {
     text: "When Twitter Hits 5000 followers  3 Nonconformist ducks will be given in a twitter competition.",
     icon: "",
-    progress: "5000 Twitter Followers",
+    progress: "50%",
   },
   {
     text: "When all the Nonconformist Ducks get sold holder ducks will randomly start brooding eggs that will growth into new super rare ducks species.We are nonconformist so why having one duck when you can have and army!",
     icon: "",
-    progress: "100% Sold Out",
+    progress: "100%",
   },
 ];
 
@@ -203,18 +208,33 @@ export default function RoadmapSection() {
       </Stack>
 
       <Box px={{ base: 0, md: 28 }}>
-        <Slider {...settings}>
-          {activations.map((each, idx) => (
-            <StatsCard
-              key={each.progess}
-              isFirst={idx === 0}
-              idx={idx}
-              progress={each.progess}
-              {...each}
-              icon={<BsPerson size={"3em"} />}
+        <VerticalTimeline>
+          {activations.map((each) => (
+            <VerticalTimelineElement
+              key={each.progress}
+              iconStyle={{
+                background: "#000",
+                color: "#fff",
+                boxShadow: "0 0 0 5px #711717",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                fontFamily: "Rubik",
+                fontSize: 20,
+                fontWeight: 700,
+              }}
+              icon={<Text children={each.progress} />}
+              contentStyle={{
+                background: "#711717",
+                border: "8px solid #711717",
+                boxShadow: "none",
+                textAlign: "left",
+                borderRadius: "0px !important",
+              }}
+              children={<Text color="#fff">{each.text}</Text>}
             />
           ))}
-        </Slider>
+        </VerticalTimeline>
       </Box>
     </Box>
   );
