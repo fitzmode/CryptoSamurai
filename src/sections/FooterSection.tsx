@@ -2,7 +2,7 @@ import { Flex, Stack, Text, Box } from "@chakra-ui/layout";
 import { Button } from "@chakra-ui/react";
 import React from "react";
 import { FaDiscord, FaTwitter } from "react-icons/fa";
-import footerImage from "../assets/Footer.png";
+import footerImage from "../assets/footer.jpg";
 
 function FooterSection() {
   return (
@@ -18,7 +18,7 @@ function FooterSection() {
       fontFamily="Rubik"
       backgroundImage={`url(${footerImage})`}
       backgroundPosition="bottom center"
-      backgroundSize="contain"
+      backgroundSize="cover"
       backgroundRepeat="no-repeat"
     >
       <Stack mb={{ base: 4, md: 12 }}>

@@ -100,7 +100,7 @@ function MintComponent() {
 
   return (
     <Box
-      background="rgba(0,0,0,0.972)"
+      background="#711717"
       width="100%"
       py={{ base: 12, md: 16 }}
       fontFamily="Kamikaze"
@@ -184,7 +184,7 @@ function MintComponent() {
             py={{ base: 10, md: 12 }}
             px={{ base: 14, md: 30 }}
             width={{ base: "90%", md: "40%" }}
-            background="#264653"
+            background="#000"
             // bg={["white", "white", "primary.500", "primary.500"]}
             color="white"
             fontWeight="500"

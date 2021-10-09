@@ -191,13 +191,15 @@ export default function RoadmapSection() {
         px={{ base: "1rem", md: "8rem" }}
         py={{ base: 5, md: 10 }}
       >
-        <chakra.h1 fontWeight={"bold"} fontSize="5xl" position="relative">
-          Roadmap Activations.
+        <chakra.h1
+          fontWeight={"bold"}
+          fontSize="5xl"
+          position="relative"
+          fontFamily="Sakurata"
+        >
+          Our Kata
         </chakra.h1>
-        {/* <Text fontSize="16px">
-          Capitalize on low hanging fruit to identify a ballpark value added
-          activity to beta test.
-        </Text> */}
+        <Text fontSize="16px">(ROADMAP)</Text>
       </Stack>
 
       <Box px={{ base: 0, md: 28 }}>

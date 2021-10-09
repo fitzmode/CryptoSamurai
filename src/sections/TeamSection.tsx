@@ -8,6 +8,7 @@ import {
   useColorModeValue,
   Stack,
   Avatar,
+  Image,
 } from "@chakra-ui/react";
 import { ReactNode } from "react";
 import gato from "../assets/Hipster.png";
@@ -38,18 +39,19 @@ interface StatsCardProps {
   title: string;
   stat: string;
   icon: ReactNode;
+  side: any;
 }
 function StatsCard(props: StatsCardProps) {
-  const { title, stat, icon } = props;
+  const { title, stat, icon, side } = props;
   return (
-    <Stat
-      px={{ base: 2, md: 4 }}
-      py={"5"}
-      border={"1px solid"}
-      borderColor="#e76f51"
-      rounded={"md"}
-    >
-      <Stack spacing={{ base: 5 }}>
+    <Stat px={{ base: 2, md: 4 }} py={"5"} rounded={"md"}>
+      <Stack
+        spacing={{ base: 5 }}
+        direction={side as any}
+        justify="center"
+        align="center"
+        width="100%"
+      >
         <Box
           my={"auto"}
           color={useColorModeValue("gray.800", "gray.200")}
@@ -59,18 +61,16 @@ function StatsCard(props: StatsCardProps) {
           display="flex"
         >
           <Box
-            boxSize="120px"
             alignItems="center"
             justifyContent="center"
             display="flex"
             bg="#e76f51"
-            borderRadius="50%"
           >
             {icon}
           </Box>
         </Box>
-        <Box pl={{ base: 2, md: 4 }} textAlign="center">
-          <StatNumber fontSize={"2xl"} mb="3" fontWeight={"medium"}>
+        <Box pl={{ base: 2, md: 4 }} textAlign="left" maxW="40%">
+          <StatNumber fontSize={"5xl"} mb="3" fontWeight={"medium"}>
             {title}
           </StatNumber>
           <StatLabel fontWeight={"medium"}>{stat}</StatLabel>
@@ -90,6 +90,7 @@ export default function TeamSection() {
       color="white"
       fontFamily="Kamikaze"
       id="team"
+      width="100%"
     >
       <chakra.h1
         textAlign={"center"}
@@ -97,21 +98,23 @@ export default function TeamSection() {
         fontWeight={"bold"}
         fontSize="5xl"
         letterSpacing="0.2rem"
+        textShadow="2px 2px 8px #711717"
       >
         THE Senseis
       </chakra.h1>
 
       <SimpleGrid
-        columns={{ base: 1, md: 4, lg: 4 }}
+        columns={{ base: 1, md: 1 }}
         padding={{ base: 8, md: 12 }}
         spacing={{ base: 5, lg: 8 }}
       >
-        {team.map((member) => (
+        {team.map((member, idx) => (
           <StatsCard
             key={member.name}
+            side={idx % 2 == 0 ? "row" : "row-reverse"}
             title={member.name}
             stat={member.role}
-            icon={<Avatar boxSize="120px" src={member.image} />}
+            icon={<Image boxSize="200px" rounded="none" src={member.image} />}
           />
         ))}
       </SimpleGrid>

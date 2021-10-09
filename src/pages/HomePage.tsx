@@ -15,7 +15,7 @@ export default function HomePage() {
     <LandingLayout>
       <Hero />
       <BuynowSection />
-      <ExampleSection />
+      {/* <ExampleSection /> */}
       <TeamSection />
       <FAQSection />
       <RoadmapSection />

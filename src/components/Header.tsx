@@ -186,18 +186,13 @@ const Header = (props: any) => {
           <MenuItem to="mint" isLast>
             {!(connected || active) && (
               <Button
-                size="md"
+                size="lg"
                 px="16"
                 rounded="none"
-                color={["primary.500", "primary.500", "white", "white"]}
-                bg={["white", "white", "primary.500", "primary.500"]}
+                color="white"
+                bg="black"
                 _hover={{
-                  bg: [
-                    "primary.100",
-                    "primary.100",
-                    "primary.600",
-                    "primary.600",
-                  ],
+                  bg: "black.alpha",
                 }}
                 onClick={connect}
               >
@@ -206,7 +201,7 @@ const Header = (props: any) => {
             )}
             {active && (
               <Button
-                size="md"
+                size="lg"
                 px="16"
                 color="white"
                 bg="black"

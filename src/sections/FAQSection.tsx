@@ -43,7 +43,7 @@ export default function FAQSection() {
       justifyContent="center"
       width="100%"
       py={{ base: 20 }}
-      background="black"
+      background="#711717"
       color="white"
       fontFamily="Rubik"
       id="faq"
