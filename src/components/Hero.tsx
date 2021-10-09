@@ -40,13 +40,13 @@ export default function Hero({
         md: `url(${headerImage})`,
       }}
       backgroundPosition="bottom center"
-      backgroundSize={{ base: "contain", md: "cover" }}
+      backgroundSize={{ base: "cover", md: "cover" }}
       backgroundRepeat="no-repeat"
     >
       <Text
         textAlign="center"
         fontFamily="Sakurata"
-        fontSize="8xl"
+        fontSize={{ md: "8xl", base: "xl" }}
         textShadow="0px 0px 5px#fff"
         color="#000"
       >
