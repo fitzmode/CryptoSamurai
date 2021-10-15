@@ -87,10 +87,7 @@ const Header = (props: any) => {
       w="100%"
       p={8}
       bg={"transparent"}
-      position="absolute"
-      top="0"
       fontWeight="500"
-      textShadow="0 0 3px #000"
       color={"white"}
       {...props}
     >

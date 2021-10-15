@@ -8,7 +8,6 @@ export default function LandingLayout(props: any) {
       direction="column"
       bg="background.theme"
       align="center"
-      position="relative"
       fontFamily="Space Mono"
       {...props}
     >
