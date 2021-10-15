@@ -102,18 +102,19 @@ function MintComponent() {
   return (
     <Box
       width="100%"
-      px={{ base: 8, md: 28 }}
+      px={{ base: 2, md: 28 }}
       fontFamily="Space Mono"
       id="mint"
     >
       <Box bg="background.light" py={{ base: 4, md: 6 }}>
         <Stack
           w="100%"
-          p={{ base: 4, md: 6 }}
+          p={{ base: 2, md: 6 }}
           direction={{ base: "column", md: "row" }}
           align="center"
           justify="space-around"
           fontSize="3xl"
+          textAlign={{ base: "center" }}
         >
           <Box>
             <Stack direction="row" fontFamily="Anyconv" fontSize="2xl">
@@ -138,10 +139,16 @@ function MintComponent() {
           </Box>
         </Stack>
       </Box>
-      <Stack mt="16">
+
+      <Stack mt="16" w="100%" textAlign={{ base: "center", md: "left" }}>
         <SectionHeader text="Who are the Cyber Samurais?" />
 
-        <Text mt="8" color="white" fontSize="xl" w="70%">
+        <Text
+          mt="8"
+          color="white"
+          fontSize="xl"
+          w={{ base: "100%", md: "70%" }}
+        >
           The Cyber Samurai's are a collection of programmatically generated
           NFTs on the Ethereum Blockchain. They are a collection of 5,000
           randomly generated Samurai's, with over 50+ total traits, all with

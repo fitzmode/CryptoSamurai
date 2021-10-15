@@ -37,6 +37,7 @@ export default function RoadmapSection() {
       color="white"
       id="faq"
       px={{ base: 4, md: 28 }}
+      textAlign={{ base: "center", md: "left" }}
     >
       <Stack align="center" spacing={8} width={{ base: "100%", md: "60%" }}>
         <SectionHeader text="Roadmap" />

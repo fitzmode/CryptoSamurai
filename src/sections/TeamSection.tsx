@@ -81,7 +81,7 @@ export default function TeamSection() {
     <Box
       mx={"auto"}
       pt={5}
-      px={{ base: 4, md: 28 }}
+      px={{ base: 2, md: 28 }}
       color="white"
       id="team"
       width="100%"

@@ -25,15 +25,11 @@ export default function Hero({
   ...rest
 }: any) {
   return (
-    <SimpleGrid
+    <Flex
       id="home"
       align="center"
       justify="center"
       width="100%"
-      columns={2}
-      // justify={{ base: "center", md: "space-around", xl: "space-between" }}
-      // direction={{ base: "column-reverse", md: "row" }}
-      // wrap="no-wrap"
       minH="100vh"
       color="#fff"
       px={{ base: 2, md: 28 }}
@@ -49,8 +45,15 @@ export default function Hero({
       direction="row"
       textAlign={{ base: "center", md: "left" }}
     >
-      <Box height="100%">
-        <Stack align="center" justify="center" h="100%" w="100%">
+      <Stack
+        direction={{ base: "column", md: "row" }}
+        display="flex"
+        h="100%"
+        w="100%"
+        align="center"
+        justify="center"
+      >
+        <Stack align="center" justify="center" w={{ base: "100%", md: "50%" }}>
           <SectionHeader
             text="5,000 of the most battletested, strongest, and advanced samurai's in
         all the NFT world."
@@ -60,12 +63,25 @@ export default function Hero({
             residing on the ETH blockchain, with over 50+ total traits all with
             different rarities.
           </Text>
+          <Button
+            size="lg"
+            rounded="full"
+            px="16"
+            color="black"
+            bg="white"
+            shadow="lg"
+            _hover={{
+              bg: "whiteAlpha.500",
+            }}
+          >
+            Connect Wallet
+          </Button>
         </Stack>
-      </Box>
 
-      <Stack align="center" justify="center">
-        <Image src={gif} />
+        <Stack align="center" justify="center">
+          <Image src={gif} />
+        </Stack>
       </Stack>
-    </SimpleGrid>
+    </Flex>
   );
 }
