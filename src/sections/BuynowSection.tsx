@@ -11,6 +11,7 @@ import detectEthereumProvider from "@metamask/detect-provider";
 import { Box, Button, Text, Stack } from "@chakra-ui/react";
 
 import { ContractContext } from "../context/ContractContext";
+import SectionHeader from "../components/SectionHeader";
 
 const min = 1;
 const defaultValue = 1;
@@ -100,24 +101,53 @@ function MintComponent() {
 
   return (
     <Box
-      background="#711717"
       width="100%"
-      py={{ base: 12, md: 16 }}
-      fontFamily="Kamikaze"
+      px={{ base: 8, md: 28 }}
+      fontFamily="Space Mono"
       id="mint"
     >
-      <Stack align="center">
-        <Text
-          fontSize="5xl"
-          color="white"
-          fontWeight={"bold"}
-          textTransform="uppercase"
-          letterSpacing="0.2em"
+      <Box bg="background.light" py={{ base: 4, md: 6 }}>
+        <Stack
+          w="100%"
+          p={{ base: 4, md: 6 }}
+          direction={{ base: "column", md: "row" }}
+          align="center"
+          justify="space-around"
+          fontSize="3xl"
         >
-          Get Your Samurai
+          <Box>
+            <Stack direction="row">
+              <Text>TOTAL AMOUNT</Text>
+              <Text fontWeight="bold">/ 3, 333</Text>
+            </Stack>
+          </Box>
+          <Box>
+            <Text>All ninjas have been sold out!</Text>
+          </Box>
+          <Box>
+            <Button
+              size="lg"
+              rounded="full"
+              variant="outline"
+              colorScheme="background.theme"
+            >
+              Buy On OpenSea
+            </Button>
+          </Box>
+        </Stack>
+      </Box>
+      <Stack mt="16">
+        <SectionHeader text="Who are the Cyber Samurais?" />
+
+        <Text mt="8" color="white" fontSize="xl" w="70%">
+          The Cyber Samurai's are a collection of programmatically generated
+          NFTs on the Ethereum Blockchain. They are a collection of 5,000
+          randomly generated Samurai's, with over 50+ total traits, all with
+          different rarities. Some of the different traits include amour, masks,
+          weapons, and more!
         </Text>
 
-        {active && (
+        {/* {active && (
           <Stack direction="row" align="center" justify="center">
             <Button
               {...getDecrementProps()}
@@ -211,7 +241,7 @@ function MintComponent() {
           >
             Mint Now
           </Button>
-        )}
+        )} */}
       </Stack>
     </Box>
   );

@@ -7,28 +7,17 @@ import footerImage from "../assets/footer.jpg";
 function FooterSection() {
   return (
     <Flex
-      background="#264653"
       width="100%"
       p={{ base: 4, md: 20 }}
       pt={{ base: 8 }}
-      boxShadow="inset 0 0 0 20px #e76f51"
       justifyContent="center"
-      minH="120vh"
       color="#fff"
-      fontFamily="Rubik"
-      backgroundImage={`url(${footerImage})`}
       backgroundPosition="bottom center"
       backgroundSize="cover"
       backgroundRepeat="no-repeat"
     >
       <Stack mb={{ base: 4, md: 12 }}>
-        <Text
-          textAlign={"center"}
-          py={5}
-          fontWeight={"bold"}
-          fontSize="5xl"
-          fontFamily="Sakurata"
-        >
+        <Text textAlign={"center"} py={5} fontWeight={"bold"} fontSize="5xl">
           Stalk Us
         </Text>
         <Stack
@@ -96,14 +85,6 @@ function FooterSection() {
           >
             OpenSea
           </Button>
-        </Stack>
-        <Stack>
-          <Text textAlign="center" fontWeight="bold" mt="20">
-            Smart Contract Address
-          </Text>
-          <Text textAlign="center" fontWeight="500" mt="20">
-            0x0F4B28D46CAB209bC5fa987A92A26a5680538e45
-          </Text>
         </Stack>
       </Stack>
     </Flex>

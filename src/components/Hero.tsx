@@ -11,8 +11,10 @@ import {
   Text,
   SimpleGrid,
 } from "@chakra-ui/react";
-import headerImage from "../assets/bg.jpg";
-import mobileHeader from "../assets/bg.jpg";
+import headerImage from "../assets/Header.png";
+import mobileHeader from "../assets/Header.png";
+import gif from "../assets/demo.gif";
+import SectionHeader from "./SectionHeader";
 
 export default function Hero({
   title,
@@ -23,16 +25,18 @@ export default function Hero({
   ...rest
 }: any) {
   return (
-    <Flex
+    <SimpleGrid
       id="home"
       align="center"
       justify="center"
       width="100%"
+      columns={2}
       // justify={{ base: "center", md: "space-around", xl: "space-between" }}
       // direction={{ base: "column-reverse", md: "row" }}
       // wrap="no-wrap"
       minH="100vh"
-      px={8}
+      color="#fff"
+      px={{ base: 2, md: 28 }}
       background="background.theme"
       {...rest}
       backgroundImage={{
@@ -42,16 +46,21 @@ export default function Hero({
       backgroundPosition="bottom center"
       backgroundSize={{ base: "cover", md: "cover" }}
       backgroundRepeat="no-repeat"
+      direction="row"
+      textAlign={{ base: "center", md: "left" }}
     >
-      <Text
-        textAlign="center"
-        fontFamily="Sakurata"
-        fontSize={{ md: "8xl", base: "xl" }}
-        textShadow="0px 0px 5px#fff"
-        color="#000"
-      >
-        CryptoSamurais
-      </Text>
-    </Flex>
+      <Box height="100%">
+        <Stack align="center" justify="center" h="100%" w="100%">
+          <SectionHeader
+            text="5,000 of the most battletested, strongest, and advanced samurai's in
+        all the NFT world."
+          />
+        </Stack>
+      </Box>
+
+      <Stack align="center" justify="center">
+        <Image src={gif} />
+      </Stack>
+    </SimpleGrid>
   );
 }

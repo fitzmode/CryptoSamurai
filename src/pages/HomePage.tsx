@@ -6,7 +6,7 @@ import BuynowSection from "../sections/BuynowSection";
 import ExampleSection from "../sections/ExampleSection";
 import FAQSection from "../sections/FAQSection";
 import FooterSection from "../sections/FooterSection";
-import JoinSection from "../sections/JoinSection";
+import RaritySection from "../sections/RaritySection";
 import RoadmapSection from "../sections/RoadmapSection";
 import TeamSection from "../sections/TeamSection";
 
@@ -15,11 +15,11 @@ export default function HomePage() {
     <LandingLayout>
       <Hero />
       <BuynowSection />
-      {/* <ExampleSection /> */}
-      <TeamSection />
+      <RaritySection />
+      <ExampleSection />
       <FAQSection />
       <RoadmapSection />
-      <JoinSection />
+      <TeamSection />
       <FooterSection />
     </LandingLayout>
   );

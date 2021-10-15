@@ -1,14 +1,4 @@
-import {
-  Accordion,
-  AccordionItem,
-  AccordionButton,
-  AccordionPanel,
-  AccordionIcon,
-  Box,
-  Flex,
-  Stack,
-  chakra,
-} from "@chakra-ui/react";
+import { Text, Box, Flex, Stack, chakra } from "@chakra-ui/react";
 
 const faqs = [
   {
@@ -43,52 +33,26 @@ export default function FAQSection() {
       justifyContent="center"
       width="100%"
       py={{ base: 20 }}
-      background="#711717"
       color="white"
-      fontFamily="Rubik"
       id="faq"
     >
-      <Stack width="100%" align="center">
+      <Stack width="100%" align="center" px={{ base: 4, md: 28 }}>
         <chakra.h1
           textAlign={"center"}
           py={10}
           fontWeight={"bold"}
           fontSize="5xl"
           letterSpacing="0.2rem"
-          fontFamily="Sakurata"
         >
           FAQs
         </chakra.h1>
-        <Accordion allowToggle width={{ base: "100%", md: "60%" }}>
-          {faqs.map((faq) => (
-            <AccordionItem border="none" mb={4} p={4}>
-              <h2>
-                <AccordionButton>
-                  <Box
-                    flex="1"
-                    color="white"
-                    textAlign="left"
-                    fontWeight="bold"
-                    fontSize="2xl"
-                    fontFamily="Kamikaze"
-                    letterSpacing="0.2em"
-                  >
-                    {faq.q}
-                  </Box>
-                  <AccordionIcon />
-                </AccordionButton>
-              </h2>
-              <AccordionPanel
-                fontSize="xl"
-                pb={4}
-                fontWeight="300"
-                fontFamily="Rubik"
-              >
-                {faq.a}
-              </AccordionPanel>
-            </AccordionItem>
-          ))}
-        </Accordion>
+        {faqs.map((faq) => (
+          <Box w="100%">
+            <Text fontWeight="bold">{faq.q}</Text>
+
+            {faq.a}
+          </Box>
+        ))}
       </Stack>
     </Flex>
   );

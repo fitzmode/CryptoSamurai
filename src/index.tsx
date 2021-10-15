@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import "./assets/fonts/sakurata/font.css";
+import "./assets/fonts/anyconv/font.css";
 import App from "./App";
 import { store } from "./app/store";
 import { Provider } from "react-redux";
@@ -32,8 +33,9 @@ const colors = {
   },
 
   background: {
-    theme: "#250b28",
+    theme: "#040d18",
     secondary: "#e76f51",
+    light: "#98b7b1",
   },
 };
 

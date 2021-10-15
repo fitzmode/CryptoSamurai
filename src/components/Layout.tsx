@@ -4,7 +4,14 @@ import Header from "./Header";
 
 export default function LandingLayout(props: any) {
   return (
-    <Flex direction="column" align="center" position="relative" {...props}>
+    <Flex
+      direction="column"
+      bg="background.theme"
+      align="center"
+      position="relative"
+      fontFamily="Space Mono"
+      {...props}
+    >
       <Header />
       {props.children}
     </Flex>

@@ -39,37 +39,30 @@ interface StatsCardProps {
   title: string;
   stat: string;
   icon: ReactNode;
-  side: any;
 }
 function StatsCard(props: StatsCardProps) {
-  const { title, stat, icon, side } = props;
+  const { title, stat, icon } = props;
   return (
     <Stat px={{ base: 2, md: 4 }} py={"5"} rounded={"md"}>
       <Stack
         spacing={{ base: 5 }}
-        direction={side as any}
+        w="100%"
         justify="center"
         align="center"
         width="100%"
       >
         <Box
           my={"auto"}
-          color={useColorModeValue("gray.800", "gray.200")}
           alignContent={"center"}
           alignItems="center"
           justifyContent="center"
           display="flex"
         >
-          <Box
-            alignItems="center"
-            justifyContent="center"
-            display="flex"
-            bg="#e76f51"
-          >
+          <Box alignItems="center" justifyContent="center" display="flex">
             {icon}
           </Box>
         </Box>
-        <Box pl={{ base: 2, md: 4 }} textAlign="left" maxW="40%">
+        <Box pl={{ base: 2, md: 4 }}>
           <StatNumber fontSize={"5xl"} mb="3" fontWeight={"medium"}>
             {title}
           </StatNumber>
@@ -85,10 +78,8 @@ export default function TeamSection() {
     <Box
       mx={"auto"}
       pt={5}
-      px={{ base: 2, sm: 12, md: 17 }}
-      background="black"
+      px={{ base: 4, md: 28 }}
       color="white"
-      fontFamily="Kamikaze"
       id="team"
       width="100%"
     >
@@ -100,21 +91,16 @@ export default function TeamSection() {
         letterSpacing="0.2rem"
         textShadow="2px 2px 8px #711717"
       >
-        THE Senseis
+        MEET THE TEAM
       </chakra.h1>
 
-      <SimpleGrid
-        columns={{ base: 1, md: 1 }}
-        padding={{ base: 8, md: 12 }}
-        spacing={{ base: 5, lg: 8 }}
-      >
+      <SimpleGrid columns={{ base: 1, md: 4 }} spacing={{ base: 2, md: 4 }}>
         {team.map((member, idx) => (
           <StatsCard
             key={member.name}
-            side={idx % 2 == 0 ? "row" : "row-reverse"}
             title={member.name}
             stat={member.role}
-            icon={<Image boxSize="200px" rounded="none" src={member.image} />}
+            icon={<Image boxSize="200px" rounded="lg" src={member.image} />}
           />
         ))}
       </SimpleGrid>

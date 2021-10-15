@@ -22,33 +22,27 @@ import six from "../assets/6.png";
 import seven from "../assets/7.png";
 import eight from "../assets/8.png";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-import SwiperCore, { Navigation } from "swiper";
-SwiperCore.use([Navigation]);
+import gato from "../assets/Hipster.png";
+import vercho from "../assets/Franchute.png";
+import ducktist from "../assets/Krusty.png";
+import franni from "../assets/1.png";
 
 const examples = [
+  { name: "Gato", role: "The father of the creature.", image: gato },
   {
-    image: one,
+    name: "Frani",
+    role: "The artist, the one in charge on making your ducks look amazing.",
+    image: franni,
   },
   {
-    image: two,
+    name: "Vercho",
+    role: "We dont know really what he does. But we love Vercho!",
+    image: vercho,
   },
   {
-    image: three,
-  },
-  {
-    image: four,
-  },
-  {
-    image: five,
-  },
-  {
-    image: six,
-  },
-  {
-    image: seven,
-  },
-  {
-    image: eight,
+    name: "Ducktist",
+    role: "He is in charge of the community growth on Discord and Twitter.",
+    image: ducktist,
   },
 ];
 
@@ -56,47 +50,19 @@ function ExampleSection() {
   const prev = React.useRef();
   const next = React.useRef();
   return (
-    <Flex width="100%">
-      <SimpleGrid columns={{ base: 2, md: 4 }}>
+    <Flex flex={1} padding={{ base: 4, md: 28 }}>
+      <SimpleGrid columns={{ base: 1, md: 4 }} spacing={{ base: 2, md: 8 }}>
         {examples.map((each) => (
           <GridItem>
-            <Image height="100%" width="100%" src={each.image} />
+            <Image
+              rounded={{ base: "md", md: "lg" }}
+              height="100%"
+              width="100%"
+              src={each.image}
+            />
           </GridItem>
         ))}
       </SimpleGrid>
-      {/* <Box>
-        <IconButton aria-label="left" icon={<FaArrowLeft />} ref={prev} />
-        <Swiper
-          spaceBetween={1}
-          slidesPerView={5}
-          style={{ maxWidth: "100%" }}
-          onSlideChange={() => console.log("slide change")}
-          onSwiper={(swiper) => console.log(swiper)}
-          navigation={true}
-          onInit={(swiper) => {
-            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-            // @ts-ignore
-            // eslint-disable-next-line no-param-reassign
-            swiper.params.navigation.prevEl = prev.current;
-            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-            // @ts-ignore
-            // eslint-disable-next-line no-param-reassign
-            swiper.params.navigation.nextEl = next.current;
-            // swiper.navigation.init();
-            swiper.navigation.update();
-          }}
-          pagination
-        >
-          {examples.map((each) => (
-            <SwiperSlide key={each.image}>
-              <Box height="300px" width="300px">
-                <Image height="100%" width="100%" src={each.image} />
-              </Box>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-        <div ref={next}>Next</div>
-      </Box> */}
     </Flex>
   );
 }
