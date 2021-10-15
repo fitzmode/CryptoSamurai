@@ -1,4 +1,5 @@
 import { Text, Box, Flex, Stack, chakra } from "@chakra-ui/react";
+import SectionHeader from "../components/SectionHeader";
 
 const faqs = [
   {
@@ -32,27 +33,27 @@ export default function RoadmapSection() {
     <Flex
       justifyContent="center"
       width="100%"
-      py={{ base: 20 }}
+      py={{ base: 10 }}
       color="white"
       id="faq"
+      px={{ base: 4, md: 28 }}
     >
-      <Stack width="100%" align="center" px={{ base: 4, md: 28 }}>
-        <chakra.h1
-          textAlign={"center"}
-          py={10}
-          fontWeight={"bold"}
-          fontSize="5xl"
-          letterSpacing="0.2rem"
-        >
-          FAQs
-        </chakra.h1>
-        {faqs.map((faq) => (
-          <Box w="100%">
-            <Text fontWeight="bold">{faq.q}</Text>
+      <Stack align="center" spacing={8} width={{ base: "100%", md: "60%" }}>
+        <SectionHeader text="Roadmap" />
 
-            {faq.a}
-          </Box>
-        ))}
+        <Stack spacing={{ base: 4, md: 8 }} width="100%" align="center">
+          {faqs.map((faq) => (
+            <Box w="100%">
+              <Text fontWeight="bold" fontSize="xl">
+                {faq.q}
+              </Text>
+
+              <Text mt="4" fontSize="lg">
+                {faq.a}
+              </Text>
+            </Box>
+          ))}
+        </Stack>
       </Stack>
     </Flex>
   );

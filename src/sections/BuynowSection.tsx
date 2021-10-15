@@ -116,13 +116,15 @@ function MintComponent() {
           fontSize="3xl"
         >
           <Box>
-            <Stack direction="row">
+            <Stack direction="row" fontFamily="Anyconv" fontSize="2xl">
               <Text>TOTAL AMOUNT</Text>
-              <Text fontWeight="bold">/ 3, 333</Text>
+              <Text fontWeight="bold">/ 5,000</Text>
             </Stack>
           </Box>
           <Box>
-            <Text>All ninjas have been sold out!</Text>
+            <Text fontSize="xl" fontWeight="bold">
+              All ninjas have been sold out!
+            </Text>
           </Box>
           <Box>
             <Button

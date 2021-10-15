@@ -3,6 +3,7 @@ import { Button } from "@chakra-ui/react";
 import React from "react";
 import { FaDiscord, FaTwitter } from "react-icons/fa";
 import footerImage from "../assets/footer.jpg";
+import SectionHeader from "../components/SectionHeader";
 
 function FooterSection() {
   return (
@@ -16,10 +17,8 @@ function FooterSection() {
       backgroundSize="cover"
       backgroundRepeat="no-repeat"
     >
-      <Stack mb={{ base: 4, md: 12 }}>
-        <Text textAlign={"center"} py={5} fontWeight={"bold"} fontSize="5xl">
-          Stalk Us
-        </Text>
+      <Stack mb={{ base: 4, md: 12 }} align="center">
+        <SectionHeader text="Join Us" />
         <Stack
           direction={{ base: "column", md: "row" }}
           mb={"80px"}

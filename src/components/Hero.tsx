@@ -55,6 +55,11 @@ export default function Hero({
             text="5,000 of the most battletested, strongest, and advanced samurai's in
         all the NFT world."
           />
+          <Text fontSize="xl">
+            Each Cyber Samurai NFT is a unique ERC-721 digital collectible
+            residing on the ETH blockchain, with over 50+ total traits all with
+            different rarities.
+          </Text>
         </Stack>
       </Box>
 

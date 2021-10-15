@@ -17,7 +17,7 @@ export default function HomePage() {
       <BuynowSection />
       <RaritySection />
       <ExampleSection />
-      <FAQSection />
+      {/* <FAQSection /> */}
       <RoadmapSection />
       <TeamSection />
       <FooterSection />

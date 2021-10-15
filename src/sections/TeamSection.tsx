@@ -15,22 +15,23 @@ import gato from "../assets/Hipster.png";
 import vercho from "../assets/Franchute.png";
 import ducktist from "../assets/Krusty.png";
 import franni from "../assets/1.png";
+import SectionHeader from "../components/SectionHeader";
 
 const team = [
-  { name: "Gato", role: "The father of the creature.", image: gato },
+  { name: "Nick", role: "Owner", image: gato },
   {
-    name: "Frani",
-    role: "The artist, the one in charge on making your ducks look amazing.",
+    name: "$Matt",
+    role: "Marketing",
     image: franni,
   },
   {
-    name: "Vercho",
-    role: "We dont know really what he does. But we love Vercho!",
+    name: "Alex",
+    role: "Community",
     image: vercho,
   },
   {
-    name: "Ducktist",
-    role: "He is in charge of the community growth on Discord and Twitter.",
+    name: "Fitz",
+    role: "Developer",
     image: ducktist,
   },
 ];
@@ -62,11 +63,13 @@ function StatsCard(props: StatsCardProps) {
             {icon}
           </Box>
         </Box>
-        <Box pl={{ base: 2, md: 4 }}>
-          <StatNumber fontSize={"5xl"} mb="3" fontWeight={"medium"}>
-            {title}
-          </StatNumber>
-          <StatLabel fontWeight={"medium"}>{stat}</StatLabel>
+        <Box
+          w="100%"
+          textAlign={{ base: "center", md: "left" }}
+          fontSize={"2xl"}
+        >
+          <StatNumber fontWeight="normal">{title}</StatNumber>
+          <StatLabel fontSize={"lg"}>{stat}</StatLabel>
         </Box>
       </Stack>
     </Stat>
@@ -83,27 +86,19 @@ export default function TeamSection() {
       id="team"
       width="100%"
     >
-      <chakra.h1
-        textAlign={"center"}
-        py={10}
-        fontWeight={"bold"}
-        fontSize="5xl"
-        letterSpacing="0.2rem"
-        textShadow="2px 2px 8px #711717"
-      >
-        MEET THE TEAM
-      </chakra.h1>
-
-      <SimpleGrid columns={{ base: 1, md: 4 }} spacing={{ base: 2, md: 4 }}>
-        {team.map((member, idx) => (
-          <StatsCard
-            key={member.name}
-            title={member.name}
-            stat={member.role}
-            icon={<Image boxSize="200px" rounded="lg" src={member.image} />}
-          />
-        ))}
-      </SimpleGrid>
+      <Stack align="center">
+        <SectionHeader text="Meet the team" />
+        <SimpleGrid columns={{ base: 1, md: 4 }} spacing={{ base: 2, md: 4 }}>
+          {team.map((member, idx) => (
+            <StatsCard
+              key={member.name}
+              title={member.name}
+              stat={member.role}
+              icon={<Image boxSize="200px" rounded="lg" src={member.image} />}
+            />
+          ))}
+        </SimpleGrid>
+      </Stack>
     </Box>
   );
 }
