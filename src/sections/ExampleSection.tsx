@@ -22,10 +22,10 @@ import six from "../assets/6.png";
 import seven from "../assets/7.png";
 import eight from "../assets/8.png";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-import gato from "../assets/Hipster.png";
-import vercho from "../assets/Franchute.png";
-import ducktist from "../assets/Krusty.png";
-import franni from "../assets/1.png";
+import gato from "../assets/x1.png";
+import vercho from "../assets/x2.png";
+import ducktist from "../assets/x3.png";
+import franni from "../assets/x4.png";
 
 const examples = [
   { name: "Gato", role: "The father of the creature.", image: gato },
