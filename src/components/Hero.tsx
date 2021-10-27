@@ -50,10 +50,18 @@ export default function Hero({
         display="flex"
         h="100%"
         w="100%"
-        align="center"
+        align="start"
         justify="center"
       >
-        <Stack align="center" justify="center" w={{ base: "100%", md: "50%" }}>
+        <Stack align="start" justify="start" w={{ base: "100%", md: "50%" }}>
+          <Text
+            fontSize="6xl"
+            fontFamily="Anyconv"
+            color={{ base: "#fff", md: "#fff" }}
+            textShadow="3px 0px  7px #222"
+          >
+            Cyber Samurai's
+          </Text>
           <SectionHeader
             text="2,500 of the most battletested, strongest, and advanced samurai's in
         all the NFT world."

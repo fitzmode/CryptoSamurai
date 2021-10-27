@@ -9,7 +9,7 @@ function SectionHeader({ text, hero }: any) {
       fontFamily="Anyconv"
       textTransform="uppercase"
       color={{ base: hero ? "#222" : "#fff", md: "#fff" }}
-      textShadow={hero ? "#222" : ""}
+      textShadow={hero ? " 3px 3px  10px #222" : ""}
       mb="4"
     >
       {text}
