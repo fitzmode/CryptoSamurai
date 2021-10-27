@@ -124,7 +124,7 @@ function MintComponent() {
           </Box>
           <Box>
             <Text fontSize="xl" fontWeight="bold">
-              All ninjas have been sold out!
+              Mint Opens Oct. 30!
             </Text>
           </Box>
           <Box>
@@ -134,7 +134,7 @@ function MintComponent() {
               variant="outline"
               colorScheme="background.theme"
             >
-              Buy On OpenSea
+              Mint Oct. 30!
             </Button>
           </Box>
         </Stack>
@@ -151,106 +151,10 @@ function MintComponent() {
         >
           The Cyber Samurai's are a collection of programmatically generated
           NFTs on the Ethereum Blockchain. They are a collection of 5,000
-          randomly generated Samurai's, with over 50+ total traits, all with
+          randomly generated Samurai's, with over 14+ total traits, all with
           different rarities. Some of the different traits include amour, masks,
           weapons, and more!
         </Text>
-
-        {/* {active && (
-          <Stack direction="row" align="center" justify="center">
-            <Button
-              {...getDecrementProps()}
-              background="#264653"
-              borderRadius="50px"
-              color="#fff"
-              size="lg"
-            >
-              -
-            </Button>
-            <input
-              {...getInputProps()}
-              style={{
-                height: 80,
-                width: 80,
-                color: "#fff",
-                fontSize: 40,
-                textAlign: "center",
-                userSelect: "none",
-                background: "transparent",
-                cursor: "pointer",
-                border: "none",
-                borderWidth: 0,
-                fontFamily: "Rubik",
-                fontWeight: 700,
-              }}
-              readOnly
-            />
-
-            <Button
-              background="#264653"
-              borderRadius="30px"
-              color="#fff"
-              size="lg"
-              {...getIncrementProps()}
-            >
-              +
-            </Button>
-          </Stack>
-        )}
-
-        {active && (
-          <Box
-            style={{
-              paddingLeft: 40,
-              fontSize: "1.2rem",
-              display: "flex",
-              justifyContent: "center",
-
-              alignItems: "center",
-              height: 80,
-            }}
-          >
-            <Box textAlign="center" color="red" letterSpacing="0.15em">
-              <Text>Cost: 0.03 ETH + Gas Fees</Text>
-              <Text fontSize="2xl">
-                Total cost: {(0.03 * (count as any)).toFixed(2)} ETH + Gas Fees
-              </Text>
-            </Box>
-          </Box>
-        )}
-        {!active && (
-          <Button
-            py={{ base: 10, md: 12 }}
-            px={{ base: 14, md: 30 }}
-            width={{ base: "90%", md: "40%" }}
-            background="#000"
-            // bg={["white", "white", "primary.500", "primary.500"]}
-            color="white"
-            fontWeight="500"
-            fontSize="30px"
-            rounded="none"
-            // disabled={disabled}
-            onClick={connect}
-          >
-            Connect Wallet
-          </Button>
-        )}
-
-        {active && (
-          <Button
-            py={{ base: 10, md: 12 }}
-            px={{ base: 14, md: 30 }}
-            width={{ base: "90%", md: "40%" }}
-            background="#264653"
-            color="white"
-            fontWeight="500"
-            rounded="none"
-            fontSize="30px"
-            onClick={() => mint(count)}
-          >
-            Mint Now
-          </Button>
-        )} */}
       </Stack>
     </Box>
   );

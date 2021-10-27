@@ -94,7 +94,13 @@ export default function TeamSection() {
               key={member.name}
               title={member.name}
               stat={member.role}
-              icon={<Image boxSize="200px" rounded="lg" src={member.image} />}
+              icon={
+                <Image
+                  boxSize={{ md: "200px", base: "100%" }}
+                  rounded="lg"
+                  src={member.image}
+                />
+              }
             />
           ))}
         </SimpleGrid>

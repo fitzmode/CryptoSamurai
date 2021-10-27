@@ -60,6 +60,8 @@ export const ContractProvider = ({
   const [instance, setInstance] = React.useState<any>(null);
   const [accounts, setAccounts] = React.useState([]);
   const [count, setCount] = React.useState(1);
+  const [transactionHash, setTransactionHash] = React.useState("");
+  const [loading, setLoading] = React.useState<boolean>(false);
 
   React.useEffect(() => {
     if (activatingConnector && activatingConnector === connector) {
@@ -173,13 +175,17 @@ export const ContractProvider = ({
             return "950000";
         }
       };
-      await instance.methods.mint(count).send({
+      const { transactionHash } = await instance.methods.mint(count).send({
         from: accounts[0],
         gas: gas(count),
         value,
       });
+
+      setTransactionHash(transactionHash);
+      setLoading(false);
     } catch (error) {
       console.log(error);
+      setLoading(false);
     }
   };
 
@@ -210,6 +216,8 @@ export const ContractProvider = ({
         mint,
         active,
         count,
+        loading,
+        transactionHash,
       }}
     >
       {children}

@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Button, Text, Stack, Image, SimpleGrid } from "@chakra-ui/react";
 import SectionHeader from "../components/SectionHeader";
-import ninja from "../assets/ninja.jpeg";
+import ninja from "../assets/ninja.png";
 
 function RaritySection() {
   return (
@@ -17,12 +17,11 @@ function RaritySection() {
         <Stack direction={{ base: "column-reverse", md: "row" }}>
           <Box maxW={{ base: "100%", md: "55%" }}>
             <Text mt="8" color="white" fontSize="xl">
-              Each Ninja is comprised of a head, face, body, Shinobi Shōzoku
-              (clothing), weapons, and background colors. Each reflecting the
-              ninjas unique personalities. When going out on a mission they
-              express themselves through their attire. Of course every clan has
-              their Jōnin ("upper person"), so some Ninjas are extra special,
-              meaning no one’s ever gonna see them coming.
+              Each Samurai is comprised of a helmet, amour, background colors,
+              and weapons. Each embodying the samurais unique personalities.
+              When going into battle they express themselves by their amour.
+              There are a couple clan leaders, which are extra special and rare.
+              Meaning no one samurai is the same.
             </Text>
           </Box>
           <Box p={{ md: 8 }}>

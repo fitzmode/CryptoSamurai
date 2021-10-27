@@ -57,10 +57,12 @@ export default function Hero({
           <SectionHeader
             text="5,000 of the most battletested, strongest, and advanced samurai's in
         all the NFT world."
+            hero
           />
-          <Text fontSize="xl">
+
+          <Text fontSize="xl" color={{ base: "#fff", md: "#fff" }}>
             Each Cyber Samurai NFT is a unique ERC-721 digital collectible
-            residing on the ETH blockchain, with over 50+ total traits all with
+            residing on the ETH blockchain, with over 14+ total traits all with
             different rarities.
           </Text>
           <Button
@@ -74,12 +76,16 @@ export default function Hero({
               bg: "whiteAlpha.500",
             }}
           >
-            Connect Wallet
+            Mint Oct. 30
           </Button>
         </Stack>
 
         <Stack align="center" justify="center">
-          <Image src={gif} />
+          <Image
+            rounded="md"
+            width={{ base: "300px", md: "450px" }}
+            src={gif}
+          />
         </Stack>
       </Stack>
     </Flex>

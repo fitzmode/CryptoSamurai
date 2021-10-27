@@ -87,6 +87,9 @@ const Header = (props: any) => {
       w="100%"
       p={8}
       bg={"transparent"}
+      position="absolute"
+      top="0"
+      left="0"
       fontWeight="500"
       color={"white"}
       {...props}
@@ -123,7 +126,7 @@ const Header = (props: any) => {
               onClick={() => {
                 window.open("https://twitter.com/noncoducks", "_blank");
               }}
-              icon={<FaTwitter color="#1DA1F2" size="26" />}
+              icon={<FaTwitter color="#fff" size="26" />}
               _hover={{
                 bg: "whiteAlpha",
               }}
@@ -136,7 +139,7 @@ const Header = (props: any) => {
               rounded="full"
               aria-label="Discord Link"
               size="lg"
-              icon={<FaDiscord color="#1DA1F2" size="26" />}
+              icon={<FaDiscord color="#fff" size="26" />}
               onClick={() => {
                 window.open("https://discord.gg/EFV9qCTAxC", "_blank");
               }}
@@ -158,9 +161,9 @@ const Header = (props: any) => {
                 _hover={{
                   bg: "whiteAlpha.500",
                 }}
-                onClick={connect}
+                // onClick={connect}
               >
-                Connect Wallet
+                Mint Oct 30
               </Button>
             )}
             {active && (
@@ -169,12 +172,12 @@ const Header = (props: any) => {
                 px="16"
                 color="white"
                 bg="black"
-                rounded="none"
+                rounded="full"
                 _hover={{
                   bg: "black.alpha",
                 }}
               >
-                Mint
+                Mint Oct 30
               </Button>
             )}
           </MenuItem>

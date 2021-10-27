@@ -48,7 +48,7 @@ function FooterSection() {
           >
             Discord
           </Button>
-          <Button
+          {/* <Button
             onClick={() => {
               window.open(
                 "https://opensea.io/collection/nonconformistducks",
@@ -83,7 +83,7 @@ function FooterSection() {
             }}
           >
             OpenSea
-          </Button>
+          </Button> */}
         </Stack>
       </Stack>
     </Flex>
