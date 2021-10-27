@@ -119,7 +119,7 @@ function MintComponent() {
           <Box>
             <Stack direction="row" fontFamily="Anyconv" fontSize="2xl">
               <Text>TOTAL AMOUNT</Text>
-              <Text fontWeight="bold">/ 5,000</Text>
+              <Text fontWeight="bold">/ 2,500</Text>
             </Stack>
           </Box>
           <Box>
@@ -150,7 +150,7 @@ function MintComponent() {
           w={{ base: "100%", md: "70%" }}
         >
           The Cyber Samurai's are a collection of programmatically generated
-          NFTs on the Ethereum Blockchain. They are a collection of 5,000
+          NFTs on the Ethereum Blockchain. They are a collection of 2,500
           randomly generated Samurai's, with over 14+ total traits, all with
           different rarities. Some of the different traits include amour, masks,
           weapons, and more!

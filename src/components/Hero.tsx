@@ -55,7 +55,7 @@ export default function Hero({
       >
         <Stack align="center" justify="center" w={{ base: "100%", md: "50%" }}>
           <SectionHeader
-            text="5,000 of the most battletested, strongest, and advanced samurai's in
+            text="2,500 of the most battletested, strongest, and advanced samurai's in
         all the NFT world."
             hero
           />
