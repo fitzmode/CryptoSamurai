@@ -31,7 +31,7 @@ function FooterSection() {
               bg: "none",
             }}
             onClick={() => {
-              window.open("https://twitter.com/noncoducks", "_blank");
+              window.open("https://twitter.com/SamuraisNFT", "_blank");
             }}
           >
             Twitter
@@ -43,7 +43,7 @@ function FooterSection() {
               bg: "none",
             }}
             onClick={() => {
-              window.open("https://discord.gg/EFV9qCTAxC", "_blank");
+              window.open("https://discord.gg/QMfHGJjqGz", "_blank");
             }}
           >
             Discord

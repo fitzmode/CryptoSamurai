@@ -124,7 +124,7 @@ const Header = (props: any) => {
               aria-label="Twitter"
               shadow="lg"
               onClick={() => {
-                window.open("https://twitter.com/noncoducks", "_blank");
+                window.open("https://twitter.com/SamuraisNFT", "_blank");
               }}
               icon={<FaTwitter color="#fff" size="26" />}
               _hover={{
@@ -141,7 +141,7 @@ const Header = (props: any) => {
               size="lg"
               icon={<FaDiscord color="#fff" size="26" />}
               onClick={() => {
-                window.open("https://discord.gg/EFV9qCTAxC", "_blank");
+                window.open("https://discord.gg/QMfHGJjqGz", "_blank");
               }}
               _hover={{
                 bg: "whiteAlpha",
