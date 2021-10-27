@@ -18,14 +18,14 @@ import franni from "../assets/1.png";
 import SectionHeader from "../components/SectionHeader";
 
 const team = [
-  { name: "Nick", role: "Owner", image: gato },
+  { name: "Haruto", role: "Owner", image: gato },
   {
-    name: "$Matt",
+    name: "Alex",
     role: "Marketing",
     image: franni,
   },
   {
-    name: "Alex",
+    name: "$Matt",
     role: "Community",
     image: vercho,
   },
