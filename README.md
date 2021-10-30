@@ -3,7 +3,7 @@
 Install firebase cli
 
 ```
-npm i -f firebase-tools
+npm i -g firebase-tools
 ```
 Get firebase token for project 
 
