@@ -28,17 +28,15 @@ const files = fs.readdirSync(path.join("samurais"));
 let fileLayers = {};
 for (let index = 0; index < files.length; index++) {
   const element = files[index];
-  console.log(element);
   const layer = fs.readdirSync(path.join("samurais", element));
-  console.log(layer, "Layer");
-  // Layer: Loop each layer, get the index and create the number of items for each index
   fileLayers[element] = layer;
 }
+console.log(fileLayers["0"]);
 
 const stage = new Konva.Stage({});
 
-stage.width(1969);
-stage.height(2362);
+stage.width(1080);
+stage.height(1080);
 const konvaLayer = new Konva.Layer();
 const imageCache = new Map();
 
@@ -48,27 +46,47 @@ stage.add(konvaLayer);
   try {
     // From background pick one.
 
-    for (let index = 0; index < 10; index++) {
+    for (let index = 0; index < 2500; index++) {
       // Map file layers.
-      // const background =
-      //   fileLayers[0][~~(Math.random() * fileLayers[0].length)];
+      const removeSpecialBackground = fileLayers[0].filter(
+        (file) => file !== "Space.png"
+      );
+      const background =
+        removeSpecialBackground[
+          ~~(Math.random() * removeSpecialBackground.length)
+        ];
+
       const arms =
-        fileLayers["Arms"][~~(Math.random() * fileLayers["Arms"].length)];
+        fileLayers["arms"][~~(Math.random() * fileLayers["arms"].length)];
       const chest =
-        fileLayers["Chest"][~~(Math.random() * fileLayers["Chest"].length)];
+        fileLayers["body"][~~(Math.random() * fileLayers["body"].length)];
       const helmet =
-        fileLayers["Helmet"][~~(Math.random() * fileLayers["Helmet"].length)];
+        fileLayers["head"][~~(Math.random() * fileLayers["head"].length)];
       const mask =
-        fileLayers["Mask"][~~(Math.random() * fileLayers["Mask"].length)];
+        fileLayers["mask"][~~(Math.random() * fileLayers["mask"].length)];
       const neck =
-        fileLayers["Neck"][~~(Math.random() * fileLayers["Neck"].length)];
-      const visor =
-        fileLayers["Visor"][~~(Math.random() * fileLayers["Visor"].lengthß)];
+        fileLayers["neck"][~~(Math.random() * fileLayers["neck"].length)];
+      const eyes =
+        fileLayers["eyes"][~~(Math.random() * fileLayers["eyes"].length)];
+
+      const sword =
+        fileLayers["sword"][~~(Math.random() * fileLayers["sword"].length)];
+
+      const chainsaw =
+        fileLayers["chainsaw"][
+          ~~(Math.random() * fileLayers["chainsaw"].length)
+        ];
+
+      const buzzsaw =
+        fileLayers["buzzsaw"][~~(Math.random() * fileLayers["buzzsaw"].length)];
+      const hasSpacebackground = Math.random() <= 0.01;
+
+      // 10% Chainsaw, 20%
 
       const layers = [
         {
-          image: arms,
-          name: "Arms",
+          image: hasSpacebackground ? "Space.png" : background,
+          name: "Background",
         },
         {
           image: chest,
@@ -76,7 +94,7 @@ stage.add(konvaLayer);
         },
         {
           image: helmet,
-          name: "Helmet",
+          name: "Head",
         },
 
         {
@@ -89,57 +107,58 @@ stage.add(konvaLayer);
         },
 
         {
-          image: visor,
-          name: "Visor",
+          image: eyes,
+          name: "Eyes",
         },
       ];
 
-      for (let j = 0; j < layers.length; j++) {
-        const { image, name } = layers[j];
-        const filePath = path.join("./", "samurais", name, image);
+      console.log("Layers", layers[0]);
+      // for (let j = 0; j < layers.length; j++) {
+      //   const { image, name } = layers[j];
+      //   const filePath = path.join("./", "samurais", name, image);
 
-        let loaded;
-        if (imageCache.has(filePath)) {
-          loaded = imageCache.get(filePath);
-          console.log(`Loaded from CACHE:${filePath}`);
-        } else {
-          loaded = await loadImage(filePath);
-          imageCache.set(filePath, loaded);
-          console.log(`Loaded from FS:${filePath}`);
-        }
-        const img = new Konva.Image({
-          width: 1969,
-          height: 2362,
-          image: loaded,
-        });
+      //   let loaded;
+      //   if (imageCache.has(filePath)) {
+      //     loaded = imageCache.get(filePath);
+      //     console.log(`Loaded from CACHE:${filePath}`);
+      //   } else {
+      //     loaded = await loadImage(filePath);
+      //     imageCache.set(filePath, loaded);
+      //     console.log(`Loaded from FS:${filePath}`);
+      //   }
+      //   const img = new Konva.Image({
+      //     width: 1969,
+      //     height: 2362,
+      //     image: loaded,
+      //   });
 
-        konvaLayer.add(img);
+      //   konvaLayer.add(img);
 
-        template["id"] = `#${index + 1}`;
-        template["name"] = `Samurai #${index + 1}`;
+      //   template["id"] = `#${index + 1}`;
+      //   template["name"] = `Samurai #${index + 1}`;
 
-        template["attributes"].push({
-          trait_type: name,
-          value: path.parse(image.match(/[^0-9].*/g)[0].trim()).name,
-        });
-      }
+      //   template["attributes"].push({
+      //     trait_type: name,
+      //     value: path.parse(image.match(/[^0-9].*/g)[0].trim()).name,
+      //   });
+      // }
 
-      const res = konvaLayer.toDataURL({
-        format: "jpg",
-        devicePixelRatio: 3,
-      });
-      fs.writeFileSync(`output/${index + 1}.jpg`, res.split(";base64,").pop(), {
-        encoding: "base64",
-      });
+      // const res = konvaLayer.toDataURL({
+      //   format: "jpg",
+      //   devicePixelRatio: 3,
+      // });
+      // fs.writeFileSync(`output/${index + 1}.jpg`, res.split(";base64,").pop(), {
+      //   encoding: "base64",
+      // });
 
-      fs.writeFileSync(
-        `metadata/${index + 1}`,
-        JSON.stringify(template),
-        () => {}
-      );
-      template["attributes"] = [];
-      konvaLayer.clear();
-      console.log(`Finished #${index + 1}`);
+      // fs.writeFileSync(
+      //   `metadata/${index + 1}`,
+      //   JSON.stringify(template),
+      //   () => {}
+      // );
+      // template["attributes"] = [];
+      // konvaLayer.clear();
+      // console.log(`Finished #${index + 1}`);
     }
   } catch (error) {
     console.log(error);

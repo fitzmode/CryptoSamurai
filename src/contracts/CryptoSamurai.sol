@@ -9,7 +9,7 @@ contract CryptoSamurai is ERC721, Ownable {
     using Counters for Counters.Counter;
     Counters.Counter private _tokenIds;
 
-    uint256 private _maxSupply = 1500;
+    uint256 private _maxSupply = 2500;
 
     string public _provenanceHash;
     string public _baseURL;
@@ -19,7 +19,7 @@ contract CryptoSamurai is ERC721, Ownable {
     function mint(uint256 count) external payable {
         require(_tokenIds.current() < _maxSupply, "Can not mint more than max supply");
         require(count > 0 && count <= 20, "You can mint between 1 and 20 at once");
-        require(msg.value >= count * 0.03 ether, "Insufficient payment");
+        require(msg.value >= count * 0.07 ether, "Insufficient payment");
         for (uint256 i = 0; i < count; i++) {
             _tokenIds.increment();
             _mint(msg.sender, _tokenIds.current());

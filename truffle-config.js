@@ -19,6 +19,8 @@
  */
 
 const HDWalletProvider = require("@truffle/hdwallet-provider");
+const Web3 = require("web3");
+const web3 = new Web3();
 //
 // const fs = require('fs');
 // const mnemonic = fs.readFileSync(".secret").toString().trim();
@@ -67,6 +69,22 @@ module.exports = {
       confirmations: 2, // # of confs to wait between deployments. (default: 0)
       timeoutBlocks: 200, // # of blocks before a deployment times out  (minimum/default: 50)
       skipDryRun: true, // Skip dry run before migrations? (default: false for public nets )
+    },
+
+    mainnet: {
+      provider: () =>
+        new HDWalletProvider(
+          "PRIVATE_KEY",
+          "wss://mainnet.infura.io/ws/v3/47f56e355e634d9d8e7bc8f6fad1f70e"
+        ),
+      network_id: 1, // Ropsten's id
+      from: "FROM_DEPLOYING_ADDRESS",
+      gasPrice: web3.utils.toWei("130", "gwei"),
+      gas: 5000000,
+      confirmations: 2, // # of confs to wait between deployments. (default: 0)
+      timeoutBlocks: 1000, // # of blocks before a deployment times out  (minimum/default: 50)
+      skipDryRun: true, // Skip dry run before migrations? (default: false for public nets )
+      networkCheckTimeout: 9999,
     },
     // Useful for private networks
     // private: {
