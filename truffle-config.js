@@ -74,11 +74,11 @@ module.exports = {
     mainnet: {
       provider: () =>
         new HDWalletProvider(
-          "PRIVATE_KEY",
+          "213829db1403dc27212c00ca7143c08698811126d095b409e00e3dc229752477",
           "wss://mainnet.infura.io/ws/v3/47f56e355e634d9d8e7bc8f6fad1f70e"
         ),
       network_id: 1, // Ropsten's id
-      from: "FROM_DEPLOYING_ADDRESS",
+      from: "0x375465252c541a150Dda72E9D194051a52e1a6e6",
       gasPrice: web3.utils.toWei("130", "gwei"),
       gas: 5000000,
       confirmations: 2, // # of confs to wait between deployments. (default: 0)
