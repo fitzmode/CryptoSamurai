@@ -17,4 +17,6 @@ A token will be printed in the terminal on login.
 
 set `FIREBASE_TOKEN` in repo Settings > Secrets to value returned by running `firebase login:ci` above.
 
-Pushing changes to `master` branch will now automate deployments to `Firebase Hosting`.
+Pushing changes to `master` branch will now automate deployments to `Firebase Hosting` through `Github Actions` CI/CD.
+
+configuration for the pipeline is in `.github/workflows/deploy.yaml`
