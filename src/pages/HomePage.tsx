@@ -13,14 +13,7 @@ import TeamSection from "../sections/TeamSection";
 export default function HomePage() {
   return (
     <LandingLayout>
-      <Hero />
-      <BuynowSection />
-      <RaritySection />
-      <ExampleSection />
-      {/* <FAQSection /> */}
-      <RoadmapSection />
-      <TeamSection />
-      <FooterSection />
+ 
     </LandingLayout>
   );
 }
